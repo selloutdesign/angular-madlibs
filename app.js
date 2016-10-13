@@ -1,20 +1,21 @@
 var app = angular.module('plunker', ['ngMaterial']);
 
 app.controller('MainCtrl', function($scope) {
-	$scope.data = {
+	var vm = this;
+	vm.data = {
 		
 	};
   
 	
-	$scope.onChange = function(cbState) {
+	vm.onChange = function(cbState) {
 		if (cbState === "Female") {
-				$scope.sex = "she";
-				$scope.sex2 = "her";
+				vm.sex = "she";
+				vm.sex2 = "her";
 			}else {
-				$scope.sex = "he";
-				$scope.sex2 = "his";
+				vm.sex = "he";
+				vm.sex2 = "his";
 			}
 	};
-  $scope.name = 'World';
-  $scope.femaleName = "Nancy";
+  vm.name = 'World';
+  vm.femaleName = "Nancy";
 });

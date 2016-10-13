@@ -11,30 +11,30 @@
     <script src="app.js"></script>
   </head>
 
-  <body ng-controller="MainCtrl">
+  <body ng-controller="MainCtrl as vm">
 
     <div class="content">
       <header><img src="./mad-lib-happy-face.png"><img class="madlibs" src="./ng-mad-libs-logo.png"></header>
       <div>
-        <md-switch ng-model="data.cb1" ng-change="onChange(data.cb1)"  ng-true-value="'Male'" ng-false-value="'Female'" aria-label="Sex">
-              Sex: {{ data.cb1 }}
+        <md-switch ng-model="vm.data.cb1" ng-change="vm.onChange(vm.data.cb1)"  ng-true-value="'Male'" ng-false-value="'Female'" aria-label="Sex">
+              Sex: {{ vm.data.cb1 }}
         </md-switch>
-        <input placeholder="Female Name" ng-model="femaleName">
-        <input placeholder="Job Title" ng-model="jobTitle">
-        <input placeholder="tedious Task" ng-model="tediousTask">
-        <input placeholder="Dirty Task" ng-model="dirtyTask">
-        <input placeholder="Female Name" ng-model="femaleName">
-        <input placeholder="Celebrity" ng-model="celebrity">
-        <input placeholder="Useless Skill" ng-model="uselessSkill">
-        <input placeholder="Useless Skill" ng-model="uselessSkill">
-        <input placeholder="Female Name" ng-model="femaleName">
-        <input placeholder="Adjective" ng-model="adjective">
-        <input placeholder="Obnoxious Celebrity" ng-model="obnoxiousCelebrity">
-        <input placeholder="Dirty Task" ng-model="dirtyTask">
-        <input placeholder="Huge Number" ng-model="hugeNumber">
+        <input placeholder="Female Name" ng-model="vm.femaleName">
+        <input placeholder="Job Title" ng-model="vm.jobTitle">
+        <input placeholder="tedious Task" ng-model="vm.tediousTask">
+        <input placeholder="Dirty Task" ng-model="vm.dirtyTask">
+        <input placeholder="Female Name" ng-model="vm.femaleName">
+        <input placeholder="Celebrity" ng-model="vm.celebrity">
+        <input placeholder="Useless Skill" ng-model="vm.uselessSkill">
+        <input placeholder="Useless Skill" ng-model="vm.uselessSkill">
+        <input placeholder="Female Name" ng-model="vm.femaleName">
+        <input placeholder="Adjective" ng-model="vm.adjective">
+        <input placeholder="Obnoxious Celebrity" ng-model="vm.obnoxiousCelebrity">
+        <input placeholder="Dirty Task" ng-model="vm.dirtyTask">
+        <input placeholder="Huge Number" ng-model="vm.hugeNumber">
       </div>
       <hr>
-      <p>{{femaleName}} was a {{jobTitle}} who loved technology. Although {{sex}} loved parts of {{sex2}} job {{sex}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with {{sex2}} life mentor {{celebrity}} who told {{sex2}} to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} {{sex}} studied programming instead. </p> <p>What a great decision! With {{sex2}} new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster. </p>
+      <p>{{vm.femaleName}} was a {{vm.jobTitle}} who loved technology. Although {{vm.sex}} loved parts of {{vm.sex2}} job {{vm.sex}} absolutely hated {{vm.tediousTask}} and {{vm.dirtyTask}}. So, {{vm.femaleName}} met with {{vm.sex2}} life mentor {{vm.celebrity}} who told {{vm.sex2}} to learn how to {{vm.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{vm.uselessSkill}} {{vm.sex}} studied programming instead. </p> <p>What a great decision! With {{vm.sex2}} new skills, {{vm.femaleName}} built a(n) {{vm.adjective}} robot named {{vm.obnoxiousCelebrity}} that not only loved {{vm.dirtyTask}} but did it {{vm.hugeNumber}} times faster. </p>
       </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
