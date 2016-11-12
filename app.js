@@ -1,9 +1,33 @@
-var app = angular.module('plunker', ['ngMaterial']);
+var app = angular.module('plunker', ['ngMaterial', 'ngRoute', 'ui.router']);
+app.config(function($routeProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise('/home');
 
+	$stateProvider
+
+	.state('home', {
+		url:'/home',
+		templateUrl: 'questions.html',
+		controller: 'MainCtrl'
+	})
+	// .state('questions', {
+	// 	templateUrl: 'questions.html',
+	// 	controller: 'MainCtrl'
+	// })
+	.state('madlib', {
+		templateUrl: 'madlib.html',
+		controller: 'MainCtrl'
+	});
+
+	$locationProvider.html5Mode(true);
+	
+});
 app.controller('MainCtrl', function($scope) {
 	var vm = this;
 	vm.data = {
 		
+	};
+	vm.madlibbing = function () {
+
 	};
   
 	

@@ -5,36 +5,22 @@
     <meta charset="utf-8" />
     <title>AngularJS Plunker</title>
     <script>document.write('<base href="' + document.location + '" />');</script>
+
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link rel="stylesheet" href="style.css" />
     <script data-require="angular.js@1.5.x" src="https://code.angularjs.org/1.5.8/angular.js" data-semver="1.5.8"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script> <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
     <script src="app.js"></script>
+    <base href="/">
   </head>
 
   <body ng-controller="MainCtrl as vm">
 
     <div class="content">
       <header><img src="./mad-lib-happy-face.png"><img class="madlibs" src="./ng-mad-libs-logo.png"></header>
-      <div>
-        <md-switch ng-model="vm.data.cb1" ng-change="vm.onChange(vm.data.cb1)"  ng-true-value="'Male'" ng-false-value="'Female'" aria-label="Sex">
-              Sex: {{ vm.data.cb1 }}
-        </md-switch>
-        <input placeholder="Female Name" ng-model="vm.femaleName">
-        <input placeholder="Job Title" ng-model="vm.jobTitle">
-        <input placeholder="tedious Task" ng-model="vm.tediousTask">
-        <input placeholder="Dirty Task" ng-model="vm.dirtyTask">
-        <input placeholder="Female Name" ng-model="vm.femaleName">
-        <input placeholder="Celebrity" ng-model="vm.celebrity">
-        <input placeholder="Useless Skill" ng-model="vm.uselessSkill">
-        <input placeholder="Useless Skill" ng-model="vm.uselessSkill">
-        <input placeholder="Female Name" ng-model="vm.femaleName">
-        <input placeholder="Adjective" ng-model="vm.adjective">
-        <input placeholder="Obnoxious Celebrity" ng-model="vm.obnoxiousCelebrity">
-        <input placeholder="Dirty Task" ng-model="vm.dirtyTask">
-        <input placeholder="Huge Number" ng-model="vm.hugeNumber">
-      </div>
-      <hr>
-      <p>{{vm.femaleName}} was a {{vm.jobTitle}} who loved technology. Although {{vm.sex}} loved parts of {{vm.sex2}} job {{vm.sex}} absolutely hated {{vm.tediousTask}} and {{vm.dirtyTask}}. So, {{vm.femaleName}} met with {{vm.sex2}} life mentor {{vm.celebrity}} who told {{vm.sex2}} to learn how to {{vm.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{vm.uselessSkill}} {{vm.sex}} studied programming instead. </p> <p>What a great decision! With {{vm.sex2}} new skills, {{vm.femaleName}} built a(n) {{vm.adjective}} robot named {{vm.obnoxiousCelebrity}} that not only loved {{vm.dirtyTask}} but did it {{vm.hugeNumber}} times faster. </p>
+      <!-- display content here -->
+      <div ui-view></div>
+      
       </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
