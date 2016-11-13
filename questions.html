@@ -1,5 +1,5 @@
 <div>
-        <md-switch ng-model="vm.data.cb1" ng-change="vm.onChange(vm.data.cb1)"  ng-true-value="'Male'" ng-false-value="'Female'" aria-label="Sex">
+        <md-switch ng-model="vm.data.cb1" ng-default="Male"  ng-change="vm.onChange(vm.data.cb1)"  ng-true-value="'Male'" ng-false-value="'Female'" aria-label="Sex">
               Sex: {{ vm.data.cb1 }}
         </md-switch>
         <input placeholder="Female Name" ng-model="vm.femaleName">
