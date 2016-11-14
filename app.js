@@ -32,19 +32,10 @@ app.controller('MainCtrl', function($scope, $state) {
 
 	};
   
-	
-	vm.onChange = function(cbState) {
-		if (cbState === "Female") {
-				vm.sex = "she";
-				vm.sex2 = "her";
-			}else {
-				vm.sex = "he";
-				vm.sex2 = "his";
-			}
-	};
+
   vm.name = 'World';
   vm.femaleName = "Nancy";
-
+  vm.sexbox = 'Male'
   vm.reset = function() {
   	vm.femaleName = "";
   	vm.jobTitle = "";
@@ -63,10 +54,17 @@ app.controller('MainCtrl', function($scope, $state) {
  
 
   vm.submit = function(madlib) {
-  	vm.formValid = madlib.$valid;
+  	
   	console.log(madlib.$valid);
   	if( madlib.$valid ) {
-  	    console.log('The form is valid');
+  	    console.log(vm.sexbox);
+  	    if (vm.sexbox === 'Female') {
+  	    				vm.sex = "she";
+  	    				vm.sex2 = "her";
+  	    			}else {
+  	    				vm.sex = "he";
+  	    				vm.sex2 = "his";
+  	    			}
   	    $state.go('madlib');
   	} else {
   	    console.log('The form is invalid');

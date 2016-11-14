@@ -2,9 +2,10 @@
 
 
 <form name="madlib" novalidate ng-submit="vm.submit(madlib)">
-<md-switch ng-model="vm.data.cb1" ng-default="Male"  ng-change="vm.onChange(vm.data.cb1)"  ng-true-value="'Male'" ng-false-value="'Female'" aria-label="Sex" required>
-      Sex: {{ vm.data.cb1 }}
-  </md-switch>
+
+  <label for="sex"> Sex Male:
+  <input name="sex" type="checkbox" ng-model="vm.sexbox" ng-true-value="'Male'" ng-false-value="'Female'" ></label><tt>value1 = {{vm.sexbox}}</tt><br/>
+
   <input placeholder="Name" name="name" type="text" ng-model="vm.femaleName" required /> 
   <div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.name.$error">
       <span class="error" ng-message="required">Field is required!</span>
