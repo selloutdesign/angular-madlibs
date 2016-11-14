@@ -11,3 +11,22 @@ header{
 .madlibs{
 	margin-left:12.5%;
 }
+
+.error{
+	color:red;
+	border: 1px solid red;
+}
+
+.success{
+	color:green;
+	border: 1px solid green;
+}
+.err-div{
+	display: inline-block;
+}
+.form-valid{
+	margin-top: 25px;
+	text-align: center;
+	padding: 10px;
+	width: 150px;
+}

@@ -1,4 +1,4 @@
-var app = angular.module('plunker', ['ngMaterial', 'ngRoute', 'ui.router']);
+var app = angular.module('plunker', ['ngMaterial', 'ngRoute', 'ui.router', 'ngMessages']);
 app.config(function($routeProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/');
 
@@ -46,6 +46,7 @@ app.controller('MainCtrl', function($scope, $state) {
   vm.femaleName = "Nancy";
 
   vm.reset = function() {
+  	vm.femaleName = "";
   	vm.jobTitle = "";
 	vm.tediousTask = "";
 	vm.dirtyTask = "";
@@ -59,4 +60,19 @@ app.controller('MainCtrl', function($scope, $state) {
 	$state.go('home');
   };
 
+ 
+
+  vm.submit = function(madlib) {
+  	vm.formValid = madlib.$valid;
+  	console.log(madlib.$valid);
+  	if( madlib.$valid ) {
+  	    console.log('The form is valid');
+  	    $state.go('madlib');
+  	} else {
+  	    console.log('The form is invalid');
+  	}
+  };
+
 });
+
+

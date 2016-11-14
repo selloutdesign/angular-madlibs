@@ -1,19 +1,49 @@
-<div>
-        <md-switch ng-model="vm.data.cb1" ng-default="Male"  ng-change="vm.onChange(vm.data.cb1)"  ng-true-value="'Male'" ng-false-value="'Female'" aria-label="Sex">
-              Sex: {{ vm.data.cb1 }}
-        </md-switch>
-        <input placeholder="Female Name" ng-model="vm.femaleName">
-        <input placeholder="Job Title" ng-model="vm.jobTitle">
-        <input placeholder="tedious Task" ng-model="vm.tediousTask">
-        <input placeholder="Dirty Task" ng-model="vm.dirtyTask">
-        <input placeholder="Female Name" ng-model="vm.femaleName">
-        <input placeholder="Celebrity" ng-model="vm.celebrity">
-        <input placeholder="Useless Skill" ng-model="vm.uselessSkill">
-        <input placeholder="Useless Skill" ng-model="vm.uselessSkill">
-        <input placeholder="Female Name" ng-model="vm.femaleName">
-        <input placeholder="Adjective" ng-model="vm.adjective">
-        <input placeholder="Obnoxious Celebrity" ng-model="vm.obnoxiousCelebrity">
-        <input placeholder="Dirty Task" ng-model="vm.dirtyTask">
-        <input placeholder="Huge Number" ng-model="vm.hugeNumber">
-</div>
-<button ui-sref="madlib">Submit MadLib</button>
+
+
+
+<form name="madlib" novalidate ng-submit="vm.submit(madlib)">
+<md-switch ng-model="vm.data.cb1" ng-default="Male"  ng-change="vm.onChange(vm.data.cb1)"  ng-true-value="'Male'" ng-false-value="'Female'" aria-label="Sex" required>
+      Sex: {{ vm.data.cb1 }}
+  </md-switch>
+  <input placeholder="Name" name="name" type="text" ng-model="vm.femaleName" required /> 
+  <div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.name.$error">
+      <span class="error" ng-message="required">Field is required!</span>
+  </div> <br>  
+  <input name="job" placeholder="Job Title" ng-model="vm.jobTitle" required> 
+  <div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.job.$error">
+      <span class="error" ng-message="required">Field is required!</span>
+  </div> <br>  
+  <input name="task" placeholder="tedious Task" ng-model="vm.tediousTask" required> 
+  <div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.task.$error">
+      <span class="error" ng-message="required">Field is required!</span>
+  </div> <br>  
+  <input name="dirtyTask" placeholder="Dirty Task" ng-model="vm.dirtyTask" required> 
+  <div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.dirtyTask.$error">
+    <span class="error" ng-message="required">Field is required!</span>
+</div> <br>
+<input name="celeb" placeholder="Celebrity" ng-model="vm.celebrity" required> 
+<div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.celeb.$error">
+  <span class="error" ng-message="required">Field is required!</span>
+</div> <br>  
+<input name="skill" placeholder="Useless Skill" ng-model="vm.uselessSkill" required> 
+<div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.skill.$error">
+  <span class="error" ng-message="required">Field is required!</span>
+</div> <br>   
+<input name="adj" placeholder="Adjective" ng-model="vm.adjective" required> 
+<div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.adj.$error">
+  <span class="error" ng-message="required">Field is required!</span>
+</div> <br>  
+<input name="obnoCeleb" placeholder="Obnoxious Celebrity" ng-model="vm.obnoxiousCelebrity" required> 
+<div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.obnoCeleb.$error">
+  <span class="error" ng-message="required">Field is required!</span>
+</div> <br>  
+<input placeholder="Huge Number" name="hugeNumber"  ng-model="vm.hugeNumber" ng-pattern="/^[0-9]{1,20}$/" ng-minlength="7" required> 
+<div class="err-div" ng-if="madlib.$submitted" ng-messages="madlib.hugeNumber.$error">
+  <span class="error" ng-message="required">Field is required!</span>
+  <span class="error" ng-message="minlength">Field Must be min length 7!!</span>
+  <span class="error" ng-message="pattern">Must be a positive integer.</span>
+</div> <br>
+<input type="submit" id="submit" value="Submit" />  <br />
+<div class="form-valid" ng-class="{ success: madlib.$valid, error: madlib.$invalid }">Valid</div>
+<div>{{vm.formValid}}</div>
+</form>
