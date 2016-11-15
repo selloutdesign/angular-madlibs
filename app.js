@@ -24,6 +24,8 @@ app.config(function($routeProvider, $locationProvider, $stateProvider, $urlRoute
 	
 });
 app.controller('MainCtrl', function($scope, $state) {
+
+
 	var vm = this;
 	vm.data = {
 		
@@ -31,11 +33,21 @@ app.controller('MainCtrl', function($scope, $state) {
 	vm.madlibbing = function () {
 
 	};
-  
+    vm.pageClass = 'page-home';	
+    	vm.jobTitle = "asdf";
+  	vm.tediousTask = "asdf";
+  	vm.dirtyTask = "asdf";
+  	vm.celebrity = "asdf";
+  	vm.uselessSkill = "adsf";
+  	vm.uselessSkill = "asdf";
+  	vm.adjective = "asdf";
+  	vm.obnoxiousCelebrity = "asdf";
+  	vm.dirtyTask = "asdf";
+  	vm.hugeNumber = "12345678";
 
   vm.name = 'World';
   vm.femaleName = "Nancy";
-  vm.sexbox = 'Male'
+  vm.sexbox = 'Male';
   vm.reset = function() {
   	vm.femaleName = "";
   	vm.jobTitle = "";
@@ -48,7 +60,9 @@ app.controller('MainCtrl', function($scope, $state) {
 	vm.obnoxiousCelebrity = "";
 	vm.dirtyTask = "";
 	vm.hugeNumber = "";
+	vm.pageClass = 'page-home';
 	$state.go('home');
+	
   };
 
  
@@ -65,7 +79,9 @@ app.controller('MainCtrl', function($scope, $state) {
   	    				vm.sex = "he";
   	    				vm.sex2 = "his";
   	    			}
+  	    vm.pageClass = 'page-about';
   	    $state.go('madlib');
+  	    
   	} else {
   	    console.log('The form is invalid');
   	}
